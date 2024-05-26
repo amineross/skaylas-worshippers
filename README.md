@@ -1,4 +1,4 @@
-# Skaylas Worshippers
+# Skayla's Worshippers
 First game dev journey with Godot 4.2
 
 # Usage
