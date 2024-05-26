@@ -3400,60 +3400,79 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.98712, -4.76837e-07, -10.26
 
 [node name="Leave_particle" parent="." instance=ExtResource("25_jnm2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.37815, 2.98772, -22.6383)
+visible = false
 
 [node name="Leave_particle2" parent="." instance=ExtResource("25_jnm2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.02375, 2.98772, -11.9376)
+visible = false
 
 [node name="Leave_particle3" parent="." instance=ExtResource("25_jnm2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6848, 2.98772, -10.7253)
+visible = false
 
 [node name="Leave_particle4" parent="." instance=ExtResource("25_jnm2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11022, 2.98772, -23.7654)
+visible = false
 
 [node name="Leave_particle5" parent="." instance=ExtResource("25_jnm2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.11601, 5.22736, -40.0594)
+visible = false
 
 [node name="Leave_particle6" parent="." instance=ExtResource("25_jnm2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.77969, 5.22736, -48.8282)
+visible = false
 
 [node name="Leave_particle7" parent="." instance=ExtResource("25_jnm2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.89606, 5.22736, -52.3465)
+visible = false
 
 [node name="Leave_particle8" parent="." instance=ExtResource("25_jnm2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32281, 5.22736, -31.6154)
+visible = false
 
 [node name="Leave_particle9" parent="." instance=ExtResource("25_jnm2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9548, 9.29819, -65.5231)
+visible = false
 
 [node name="Leave_particle10" parent="." instance=ExtResource("25_jnm2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8298, 9.29819, -79.8108)
+visible = false
 
 [node name="Leave_particle11" parent="." instance=ExtResource("25_jnm2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.28561, 9.29819, -85.4616)
+visible = false
 
 [node name="Leave_particle12" parent="." instance=ExtResource("25_jnm2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2509, 9.29819, -88.9086)
+visible = false
 
 [node name="Leave_particle13" parent="." instance=ExtResource("25_jnm2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7687, 13.5714, -94.9643)
+visible = false
 
 [node name="Leave_particle14" parent="." instance=ExtResource("25_jnm2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.69601, 13.5714, -102.534)
+visible = false
 
 [node name="Leave_particle15" parent="." instance=ExtResource("25_jnm2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.12071, 13.5714, -98.6455)
+visible = false
 
 [node name="Wind_particle" parent="." instance=ExtResource("26_f6ejb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.122084, 3.0444, -11.6163)
+visible = false
 
 [node name="Wind_particle2" parent="." instance=ExtResource("26_f6ejb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20643, 5.15119, -43.1535)
+visible = false
 
 [node name="Wind_particle3" parent="." instance=ExtResource("26_f6ejb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030219, 9.33644, -74.9234)
+visible = false
 
 [node name="Wind_particle4" parent="." instance=ExtResource("26_f6ejb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.291738, 13.8523, -99.2311)
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ktew7")

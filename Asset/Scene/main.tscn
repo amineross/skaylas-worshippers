@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bv4y5rk1a8xok"]
+[gd_scene load_steps=3 format=3 uid="uid://bv4y5rk1a8xok"]
 
 [ext_resource type="PackedScene" uid="uid://xm3a5j45elv3" path="res://Asset/Scene/GameLevelScene.tscn" id="1_k8dpu"]
+[ext_resource type="PackedScene" uid="uid://bjtwwlbnf38y3" path="res://Asset/Scene/cutemage.tscn" id="2_uss34"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Node3D" parent="." instance=ExtResource("1_k8dpu")]
+
+[node name="cutemage_animated" parent="." instance=ExtResource("2_uss34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -2)
