@@ -4,10 +4,20 @@ extends CharacterBody3D
 
 @onready var visual : Node3D = $VisualNode
 @onready var animationPlayer : AnimationPlayer = $VisualNode/AnimationPlayer
-
 @onready var footstepVFX : GPUParticles3D = $VisualNode/VFX/Footstep_GPUParticles3D
 
 const SPEED = 5.0
+
+var direction : Vector3
+var rollkey_pressed : bool
+var attackkey_pressed : bool
+var maxHealth: int = 100
+var currentHealth: int:
+	set(new_value):
+		currentHealth = new_value
+		emit_signal("playerHealthUpdated", currentHealth, maxHealth)
+
+
 
 var coinNumber: int:
 	set(new_value):
@@ -15,6 +25,11 @@ var coinNumber: int:
 		emit_signal("coinNumberUpdated", coinNumber)
 
 signal coinNumberUpdated(newValue)
+
+signal playerHealthUpdated(newValue, maxValue)
+
+func _ready():
+	currentHealth = maxHealth
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -25,23 +40,20 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "up", "down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-		animationPlayer.play("Run_v2")
-		footstepVFX.emitting = true
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
-		animationPlayer.play("Idle_v2")
-		footstepVFX.emitting = false
+	direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
-	if velocity.length() > 0.2:
-		var lookDir = Vector2(velocity.z, velocity.x)
-		visual.rotation.y = lookDir.angle()
+	rollkey_pressed = Input.is_action_just_pressed("roll")
+	attackkey_pressed = Input.is_action_just_pressed("attack")
+	
 	move_and_slide()
 
 func addCoin(value: int):
 	coinNumber += value
-	print(coinNumber)
+
+func takeDamage(damage: int, enemy_position: Vector3):
+	currentHealth -= damage
+	currentHealth = clamp(currentHealth, 0, maxHealth)
+	get_node("StateMachine").switchTo("Hurt")
+	
+	if get_node("StateMachine").currentState.name == "Hurt":
+		get_node("StateMachine").currentState.pushBackDir = (global_position - enemy_position).normalized()

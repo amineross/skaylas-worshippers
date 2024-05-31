@@ -18,6 +18,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if player.currentHealth == 0:
+		get_tree().change_scene_to_file(mainMenuPath)
+	
 	if Input.is_action_just_pressed("pause"):
 		paused = true
 
